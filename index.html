@@ -141,31 +141,46 @@
             table { font-size: 12px; min-width: 600px; }
             td { padding: 4px 3px; }
             
-            /* Reduce frozen column widths on mobile */
-            td:nth-child(1), td:nth-child(2) {
-                min-width: 60px; /* Reduced from 80px */
+            /* Hide booking number column on mobile */
+            td:nth-child(1) {
+                display: none;
             }
             
+            /* Allow guest name to wrap and make it sticky */
             td:nth-child(2) {
-                left: 60px; /* Reduced from 80px */
-                min-width: 100px; /* Reduced from 120px */
+                white-space: normal !important;
+                word-wrap: break-word;
+                max-width: 120px;
+                position: sticky;
+                left: 0;
+                background: #f8f9fa !important;
+                font-weight: bold;
+                z-index: 5;
+                border-right: 2px solid #007bff;
+            }
+            
+            /* Update header styling for mobile */
+            tr:first-child td:nth-child(1) {
+                display: none;
+            }
+            
+            tr:first-child td:nth-child(2) {
+                position: sticky;
+                left: 0;
+                z-index: 15;
+                background: #e9ecef !important;
             }
         }
         
         /* Extra small screens (phones in portrait) */
         @media (max-width: 480px) {
-            .header h2 { font-size: 18px; }
+            .header h2 { font-size: 16px; }
             table { font-size: 11px; }
             td { padding: 3px 2px; }
             
-            /* Even smaller frozen columns on small phones */
-            td:nth-child(1), td:nth-child(2) {
-                min-width: 50px;
-            }
-            
+            /* Smaller guest name column on very small screens */
             td:nth-child(2) {
-                left: 50px;
-                min-width: 80px;
+                max-width: 100px;
             }
         }
         
@@ -191,7 +206,7 @@
     <div class="header">
         <h2>Stavsn?s - Guest list Tuesday 03 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Last updated: 2025-06-03 23:21:08</div>
+        <div class="refresh-info">Last updated: 2025-06-03 23:23:02</div>
         <div class="auto-update-notice">? This page updates automatically every 15 minutes</div>
     </div>
     
