@@ -14,9 +14,9 @@
         .tab-content { display: none; }
         .tab-content.active { display: block; }
         .table-container { background: white; border-radius: 8px; overflow: auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1); max-height: 85vh; position: relative; }
-        table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 800px; }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 900px; }
         td, th { border: 1px solid #ddd; padding: 8px 6px; text-align: left; white-space: nowrap; vertical-align: top; }
-        td:nth-child(17) { white-space: normal; }
+        td:nth-child(17) { white-space: normal; min-width: 300px; max-width: 400px; }
         tr:first-child td { background: #f8f9fa !important; font-weight: bold; position: sticky; top: 0; z-index: 10; border-bottom: 2px solid #007bff; }
         td:nth-child(1), td:nth-child(2) { background: #f8f9fa !important; font-weight: bold; position: sticky; left: 0; z-index: 5; border-right: 2px solid #007bff; min-width: 80px; }
         td:nth-child(2) { left: 80px; min-width: 120px; }
@@ -39,12 +39,13 @@
         @media (max-width: 768px) {
             body { padding: 8px; }
             .header { padding: 10px; }
-            table { font-size: 12px; min-width: 600px; }
+            table { font-size: 12px; min-width: 700px; }
             td { padding: 4px 3px; }
             .tabs { margin-bottom: 10px; }
             .tab { padding: 10px 16px; font-size: 14px; }
             td:nth-child(1) { display: none; }
             td:nth-child(2) { white-space: normal !important; word-wrap: break-word; max-width: 120px; position: sticky; left: 0; background: #f8f9fa !important; font-weight: bold; z-index: 5; border-right: 2px solid #007bff; }
+            td:nth-child(17) { min-width: 250px; max-width: 300px; }
             tr:first-child td:nth-child(1) { display: none; }
             tr:first-child td:nth-child(2) { position: sticky; left: 0; z-index: 15; background: #e9ecef !important; }
         }
@@ -72,7 +73,7 @@
     <div class="header">
         <h2>Guest list Wed 4 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Last updated: 2025-06-04 13:51:37</div>
+        <div class="refresh-info">Last updated: 2025-06-04 14:00:08</div>
         <div class="auto-update-notice">🔄 Updates automatically every 15 minutes</div>
     </div>
     
