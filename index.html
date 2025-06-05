@@ -73,7 +73,7 @@
     <div class="header">
         <h2>Guest list Thu 5 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Last updated: 2025-06-05 15:36:19</div>
+        <div class="refresh-info">Last updated: 2025-06-05 15:37:48</div>
         <div class="auto-update-notice">🔄 Updates automatically every 15 minutes</div>
     </div>
     
@@ -420,40 +420,77 @@
     </div>
     
     <script>
-        function showTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-            document.getElementById(tabName + '-content').classList.add('active');
-            document.querySelectorAll('.tab').forEach(tab => {
-                if (tab.textContent.includes('Stavsnäs') && tabName === 'stavsnäs') tab.classList.add('active');
-                else if (tab.textContent.includes('Sollenkroka') && tabName === 'sollenkroka') tab.classList.add('active');
-            });
-            sessionStorage.setItem('activeTab', tabName);
-        }
+    function showTab(tabName) {
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+        document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+        document.getElementById(tabName + '-content').classList.add('active');
+        document.querySelectorAll('.tab').forEach(tab => {
+            if (tab.textContent.includes('Stavsnäs') && tabName === 'stavsnäs') tab.classList.add('active');
+            else if (tab.textContent.includes('Sollenkroka') && tabName === 'sollenkroka') tab.classList.add('active');
+        });
+        sessionStorage.setItem('activeTab', tabName);
+    }
+    
+    function toggleComment(commentId) {
+        const shortElement = document.getElementById(commentId + '-short');
+        const fullElement = document.getElementById(commentId + '-full');
         
-        function toggleComment(commentId) {
-            const shortElement = document.getElementById(commentId + '-short');
-            const fullElement = document.getElementById(commentId + '-full');
-            
-            if (shortElement && fullElement) {
-                if (shortElement.style.display === 'none') {
-                    shortElement.style.display = '';
-                    fullElement.style.display = 'none';
-                } else {
-                    shortElement.style.display = 'none';
-                    fullElement.style.display = '';
-                }
+        if (shortElement && fullElement) {
+            if (shortElement.style.display === 'none') {
+                shortElement.style.display = '';
+                fullElement.style.display = 'none';
+            } else {
+                shortElement.style.display = 'none';
+                fullElement.style.display = '';
             }
         }
-        
-        setTimeout(() => location.reload(), 16 * 60 * 1000);
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.table-container').forEach(container => {
-                if (container) container.style.webkitOverflowScrolling = 'touch';
-            });
-            const activeTab = sessionStorage.getItem('activeTab');
-            if (activeTab && activeTab !== 'stavsnäs') showTab(activeTab);
+    }
+    
+    function handleOrientationChange() {
+        // Small delay to ensure the orientation change is complete
+        setTimeout(() => {
+            if (window.innerWidth > window.innerHeight && window.innerWidth <= 768) {
+                // We're in landscape mode on a mobile device
+                const header = document.querySelector('.header');
+                const tabs = document.querySelector('.tabs');
+                
+                if (header && tabs) {
+                    // Calculate the height to scroll past (header + tabs + some padding)
+                    const scrollTarget = header.offsetHeight + tabs.offsetHeight + 10;
+                    
+                    // Smooth scroll past the header
+                    window.scrollTo({
+                        top: scrollTarget,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }, 100);
+    }
+    
+    // Listen for orientation changes
+    window.addEventListener('orientationchange', handleOrientationChange);
+    
+    // Also listen for resize events (more reliable on some devices)
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(handleOrientationChange, 150);
+    });
+    
+    // Auto-refresh every 16 minutes
+    setTimeout(() => location.reload(), 16 * 60 * 1000);
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.table-container').forEach(container => {
+            if (container) container.style.webkitOverflowScrolling = 'touch';
         });
-    </script>
+        const activeTab = sessionStorage.getItem('activeTab');
+        if (activeTab && activeTab !== 'stavsnäs') showTab(activeTab);
+        
+        // Check if we're already in landscape mode on load
+        setTimeout(handleOrientationChange, 200);
+    });
+</script>
 </body>
 </html>
