@@ -17,8 +17,9 @@ body{font-family:Arial,sans-serif;margin:0;padding:15px;background-color:#f5f5f5
 table{width:100%;border-collapse:collapse;font-size:14px;min-width:900px}
 td,th{border:1px solid #ddd;padding:8px 6px;text-align:left;white-space:nowrap;vertical-align:top}
 td:nth-child(17){white-space:normal;min-width:300px;max-width:400px}
-tr:first-child td{background:#f8f9fa!important;font-weight:bold;position:sticky;top:0;z-index:10;border-bottom:2px solid #007bff}
-tr:first-child th{background:#f8f9fa!important;font-weight:bold;position:sticky;top:0;z-index:10;border-bottom:2px solid #007bff}
+tr:first-child td,tr:first-child th{background:#f8f9fa!important;font-weight:bold;position:sticky;top:0;z-index:10;border-bottom:2px solid #007bff}
+table tr:first-child td,table tr:first-child th{background:#f8f9fa!important}
+.table-container table tr:first-child td,.table-container table tr:first-child th{background:#f8f9fa!important}
 td:nth-child(1),td:nth-child(2){font-weight:bold;position:sticky;z-index:5;border-right:2px solid #007bff;min-width:80px}
 td:nth-child(2){left:80px;min-width:120px}
 td:nth-child(1){left:0}
@@ -27,18 +28,18 @@ tr.booking-even{background-color:#ffffff}
 tr.booking-odd{background-color:#e8e8e8}
 tr.booking-even td:nth-child(1),tr.booking-even td:nth-child(2){background-color:#ffffff!important}
 tr.booking-odd td:nth-child(1),tr.booking-odd td:nth-child(2){background-color:#e8e8e8!important}
-tr.starts-today-odd{background-color:#b6d7a8!important}
-tr.starts-today-even{background-color:#93c47d!important}
-tr.ends-today-odd{background-color:#9fc5e8!important}
-tr.ends-today-even{background-color:#6fa8dc!important}
-tr.kayak-trail-odd{background-color:#d5a6bd!important}
-tr.kayak-trail-even{background-color:#c27ba0!important}
-tr.starts-today-odd td:nth-child(1),tr.starts-today-odd td:nth-child(2){background-color:#b6d7a8!important}
-tr.starts-today-even td:nth-child(1),tr.starts-today-even td:nth-child(2){background-color:#93c47d!important}
-tr.ends-today-odd td:nth-child(1),tr.ends-today-odd td:nth-child(2){background-color:#9fc5e8!important}
-tr.ends-today-even td:nth-child(1),tr.ends-today-even td:nth-child(2){background-color:#6fa8dc!important}
-tr.kayak-trail-odd td:nth-child(1),tr.kayak-trail-odd td:nth-child(2){background-color:#d5a6bd!important}
-tr.kayak-trail-even td:nth-child(1),tr.kayak-trail-even td:nth-child(2){background-color:#c27ba0!important}
+tr.starts-today-odd{background-color:#93c47d!important}
+tr.starts-today-even{background-color:#b6d7a8!important}
+tr.ends-today-odd{background-color:#6fa8dc!important}
+tr.ends-today-even{background-color:#9fc5e8!important}
+tr.kayak-trail-odd{background-color:#c27ba0!important}
+tr.kayak-trail-even{background-color:#d5a6bd!important}
+tr.starts-today-odd td:nth-child(1),tr.starts-today-odd td:nth-child(2){background-color:#93c47d!important}
+tr.starts-today-even td:nth-child(1),tr.starts-today-even td:nth-child(2){background-color:#b6d7a8!important}
+tr.ends-today-odd td:nth-child(1),tr.ends-today-odd td:nth-child(2){background-color:#6fa8dc!important}
+tr.ends-today-even td:nth-child(1),tr.ends-today-even td:nth-child(2){background-color:#9fc5e8!important}
+tr.kayak-trail-odd td:nth-child(1),tr.kayak-trail-odd td:nth-child(2){background-color:#c27ba0!important}
+tr.kayak-trail-even td:nth-child(1),tr.kayak-trail-even td:nth-child(2){background-color:#d5a6bd!important}
 .end-today-cell{background-color:#6fa8dc!important}
 .empty-cell{color:#ccc;font-style:italic}
 .overview-table{min-width:600px;max-width:800px;width:auto;margin:0 auto}
@@ -54,15 +55,15 @@ tr.kayak-trail-even td:nth-child(1),tr.kayak-trail-even td:nth-child(2){backgrou
 .overview-table .overview-section-header{padding:6px 8px!important;font-weight:bold;background-color:#000000!important;color:white!important}
 .overview-table .overview-section-header-row td{background-color:#000000!important;color:white!important;font-weight:bold;padding:6px 8px!important}
 .overview-highlight-1{background-color:#fffefe!important}
-.overview-highlight-2{background-color:#fef5f5!important}
-.overview-highlight-3{background-color:#fee2e2!important}
-.overview-highlight-4{background-color:#fecaca!important}
-.overview-highlight-5{background-color:#fca5a5!important}
-.overview-highlight-6{background-color:#f87171!important}
-.overview-highlight-7{background-color:#ef4444!important}
-.overview-highlight-8{background-color:#dc2626!important}
-.overview-highlight-9{background-color:#b91c1c!important}
-.overview-highlight-10{background-color:#991b1b!important}
+.overview-highlight-2{background-color:#fef7f7!important}
+.overview-highlight-3{background-color:#fee8e8!important}
+.overview-highlight-4{background-color:#fed7d7!important}
+.overview-highlight-5{background-color:#fdc6c6!important}
+.overview-highlight-6{background-color:#fcb5b5!important}
+.overview-highlight-7{background-color:#fba4a4!important}
+.overview-highlight-8{background-color:#fa9393!important}
+.overview-highlight-9{background-color:#f98282!important}
+.overview-highlight-10{background-color:#f87171!important}
 @media (max-width:768px){
 body{padding:8px}
 .header{padding:10px}
@@ -104,7 +105,7 @@ td:nth-child(17){white-space:normal}
     <div class="header">
         <h2>Guest list Thu 5 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Last updated: 2025-06-05 21:51:09</div>
+        <div class="refresh-info">Last updated: 2025-06-05 21:55:48</div>
         <div class="auto-update-notice">🔄 Updates automatically every 15 minutes</div>
     </div>
     
