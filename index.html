@@ -78,12 +78,20 @@ tr.kayak-trail-even td:nth-child(1), tr.kayak-trail-even td:nth-child(2) { backg
   text-align: left;
   vertical-align: middle;
 }
+.overview-table tr:first-child td { 
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #e9ecef !important;
+  font-weight: bold;
+  border-bottom: 2px solid #007bff;
+}
 .overview-table tr:first-child td:nth-child(1) { 
   z-index: 15; 
   background: #e9ecef !important; 
 }
 
-/* NO sticky behavior for other columns in overview table */
+/* NO sticky behavior for other columns in overview table (except header row) */
 .overview-table td:nth-child(n+2) {
   text-align: center;
   vertical-align: middle;
@@ -100,10 +108,17 @@ tr.kayak-trail-even td:nth-child(1), tr.kayak-trail-even td:nth-child(2) { backg
 .overview-going-out-items { background-color: #b6d7a8 !important; } /* Lighter green for gear/kayak items */
 .overview-groups-coming-in { background-color: #6fa8dc !important; } /* Blue for coming back */
 
-/* Conditional formatting gradient from white to light pink */
-.overview-highlight-light { background-color: #fdf2f8 !important; }   /* Very light pink */
-.overview-highlight-medium { background-color: #fce7f3 !important; }  /* Light pink */
-.overview-highlight-dark { background-color: #f9a8d4 !important; }    /* Medium pink */
+/* Conditional formatting gradient - progressive pink shades */
+.overview-highlight-1 { background-color: #fef7ff !important; }   /* Very very light pink */
+.overview-highlight-2 { background-color: #fdf2f8 !important; }   /* Very light pink */
+.overview-highlight-3 { background-color: #fce7f3 !important; }   /* Light pink */
+.overview-highlight-4 { background-color: #fbcfe8 !important; }   /* Light-medium pink */
+.overview-highlight-5 { background-color: #f9a8d4 !important; }   /* Medium pink */
+.overview-highlight-6 { background-color: #f472b6 !important; }   /* Medium-dark pink */
+.overview-highlight-7 { background-color: #ec4899 !important; }   /* Dark pink */
+.overview-highlight-8 { background-color: #db2777 !important; }   /* Darker pink */
+.overview-highlight-9 { background-color: #be185d !important; }   /* Very dark pink */
+.overview-highlight-10 { background-color: #9d174d !important; }  /* Darkest pink */
 
 @media (max-width: 768px) {
     body { padding: 8px; }
@@ -131,6 +146,13 @@ tr.kayak-trail-even td:nth-child(1), tr.kayak-trail-even td:nth-child(2) { backg
       font-weight: bold;
       z-index: 5;
       border-right: 2px solid #007bff;
+    }
+    .overview-table tr:first-child td {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 10 !important;
+      background: #e9ecef !important;
+      font-weight: bold;
     }
     .overview-table tr:first-child td:nth-child(1) {
       z-index: 15 !important;
@@ -164,7 +186,7 @@ tr.kayak-trail-even td:nth-child(1), tr.kayak-trail-even td:nth-child(2) { backg
     <div class="header">
         <h2>Guest list Thu 5 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Last updated: 2025-06-05 17:52:09</div>
+        <div class="refresh-info">Last updated: 2025-06-05 17:54:26</div>
         <div class="auto-update-notice">🔄 Updates automatically every 15 minutes</div>
     </div>
     
@@ -512,7 +534,7 @@ tr.kayak-trail-even td:nth-child(1), tr.kayak-trail-even td:nth-child(2) { backg
     </div>
     
     <div id="overview-content" class="tab-content">
-        <div class="table-container"><table class="overview-table"><tr><td></td><td>Today<br>Thu 5 Jun</td><td>Tomorrow<br>Fri 6 Jun</td><td>Sat 7 Jun</td><td>Sun 8 Jun</td><td>Mon 9 Jun</td><td>Tue 10 Jun</td><td>Wed 11 Jun</td></tr><tr><td>STAVSNÄS</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="overview-groups-going-out">Groups going out</td><td class="overview-groups-going-out">2</td><td class="overview-highlight-medium">7</td><td>1</td><td>2</td><td>2</td><td>2</td><td>6</td></tr><tr><td class="overview-going-out-items">- Regular kayaks</td><td class="overview-going-out-items">0</td><td class="overview-highlight-medium">1</td><td>0</td><td>0</td><td>0</td><td class="overview-highlight-medium">1</td><td>0</td></tr><tr><td class="overview-going-out-items">- Beginner kayaks</td><td class="overview-going-out-items">0</td><td class="overview-highlight-medium">6</td><td>0</td><td>0</td><td>2</td><td>1</td><td>0</td></tr><tr><td class="overview-going-out-items">- Long kayaks</td><td class="overview-going-out-items">0</td><td>2</td><td>0</td><td class="overview-highlight-medium">5</td><td>0</td><td>0</td><td>2</td></tr><tr><td class="overview-going-out-items">- Double kayaks</td><td class="overview-going-out-items">3</td><td>2</td><td>1</td><td>3</td><td>1</td><td>2</td><td class="overview-highlight-medium">7</td></tr><tr><td class="overview-going-out-items">- Tour package (# people)</td><td class="overview-going-out-items">2</td><td>2</td><td>2</td><td class="overview-highlight-medium">6</td><td>2</td><td>3</td><td>0</td></tr><tr><td class="overview-going-out-items">- Kayak trail (# people)</td><td class="overview-going-out-items">0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0</td><td class="overview-highlight-medium">12</td></tr><tr><td class="overview-groups-coming-in">Groups coming in</td><td class="overview-groups-coming-in">2</td><td>1</td><td>2</td><td class="overview-highlight-medium">6</td><td>1</td><td>1</td><td>2</td></tr><tr class="overview-divider"><td>SOLLENKROKA</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="overview-groups-going-out">Groups going out</td><td class="overview-groups-going-out">1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr><tr><td class="overview-going-out-items">- Regular kayaks</td><td class="overview-going-out-items">1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td class="overview-going-out-items">- Beginner kayaks</td><td class="overview-going-out-items">0</td><td>0</td><td>0</td><td>0</td><td>4</td><td>0</td><td>0</td></tr><tr><td class="overview-going-out-items">- Long kayaks</td><td class="overview-going-out-items">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td class="overview-going-out-items">- Double kayaks</td><td class="overview-going-out-items">0</td><td>2</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr><tr><td class="overview-going-out-items">- Tour package (# people)</td><td class="overview-going-out-items">0</td><td>0</td><td>0</td><td>4</td><td>4</td><td>0</td><td>0</td></tr><tr><td class="overview-going-out-items">- Kayak trail (# people)</td><td class="overview-going-out-items">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td class="overview-groups-coming-in">Groups coming in</td><td class="overview-groups-coming-in">1</td><td>0</td><td>0</td><td>2</td><td>1</td><td>0</td><td>2</td></tr></table></div>
+        <div class="table-container"><table class="overview-table"><tr><td></td><td>Today<br>Thu 5 Jun</td><td>Tomorrow<br>Fri 6 Jun</td><td>Sat 7 Jun</td><td>Sun 8 Jun</td><td>Mon 9 Jun</td><td>Tue 10 Jun</td><td>Wed 11 Jun</td></tr><tr><td>STAVSNÄS</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="overview-groups-going-out">Groups going out</td><td class="overview-groups-going-out">2</td><td class="overview-highlight-5">7</td><td>1</td><td>2</td><td>2</td><td>2</td><td>6</td></tr><tr><td class="overview-going-out-items">- Regular kayaks</td><td class="overview-going-out-items">0</td><td class="overview-highlight-5">1</td><td>0</td><td>0</td><td>0</td><td class="overview-highlight-5">1</td><td>0</td></tr><tr><td class="overview-going-out-items">- Beginner kayaks</td><td class="overview-going-out-items">0</td><td class="overview-highlight-5">6</td><td>0</td><td>0</td><td>2</td><td>1</td><td>0</td></tr><tr><td class="overview-going-out-items">- Long kayaks</td><td class="overview-going-out-items">0</td><td>2</td><td>0</td><td class="overview-highlight-5">5</td><td>0</td><td>0</td><td>2</td></tr><tr><td class="overview-going-out-items">- Double kayaks</td><td class="overview-going-out-items">3</td><td>2</td><td>1</td><td>3</td><td>1</td><td>2</td><td class="overview-highlight-5">7</td></tr><tr><td class="overview-going-out-items">- Tour package (# people)</td><td class="overview-going-out-items">2</td><td>2</td><td>2</td><td class="overview-highlight-5">6</td><td>2</td><td>3</td><td>0</td></tr><tr><td class="overview-going-out-items">- Kayak trail (# people)</td><td class="overview-going-out-items">0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0</td><td class="overview-highlight-5">12</td></tr><tr><td class="overview-groups-coming-in">Groups coming in</td><td class="overview-groups-coming-in">2</td><td>1</td><td>2</td><td class="overview-highlight-5">6</td><td>1</td><td>1</td><td>2</td></tr><tr class="overview-divider"><td>SOLLENKROKA</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="overview-groups-going-out">Groups going out</td><td class="overview-groups-going-out">1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr><tr><td class="overview-going-out-items">- Regular kayaks</td><td class="overview-going-out-items">1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td class="overview-going-out-items">- Beginner kayaks</td><td class="overview-going-out-items">0</td><td>0</td><td>0</td><td>0</td><td>4</td><td>0</td><td>0</td></tr><tr><td class="overview-going-out-items">- Long kayaks</td><td class="overview-going-out-items">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td class="overview-going-out-items">- Double kayaks</td><td class="overview-going-out-items">0</td><td>2</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr><tr><td class="overview-going-out-items">- Tour package (# people)</td><td class="overview-going-out-items">0</td><td>0</td><td>0</td><td>4</td><td>4</td><td>0</td><td>0</td></tr><tr><td class="overview-going-out-items">- Kayak trail (# people)</td><td class="overview-going-out-items">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td class="overview-groups-coming-in">Groups coming in</td><td class="overview-groups-coming-in">1</td><td>0</td><td>0</td><td>2</td><td>1</td><td>0</td><td>2</td></tr></table></div>
     </div>
     
     <script>
