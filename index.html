@@ -17,43 +17,79 @@ body{font-family:Arial,sans-serif;margin:0;padding:15px;background-color:#f5f5f5
 table{width:100%;border-collapse:collapse;font-size:14px;min-width:900px}
 td,th{border:1px solid #ddd;padding:8px 6px;text-align:left;white-space:nowrap;vertical-align:top}
 td:nth-child(17){white-space:normal;min-width:300px;max-width:400px}
-tr:first-child td,tr:first-child th{background:#f8f9fa!important;font-weight:bold;position:sticky;top:0;z-index:10;border-bottom:2px solid #007bff}
-table tr:first-child td,table tr:first-child th{background:#f8f9fa!important}
-.table-container table tr:first-child td,.table-container table tr:first-child th{background:#f8f9fa!important}
+
+/* HEADER ROW STYLING - Consistent across all tables */
+table tr:first-child td,
+table tr:first-child th,
+.table-container table tr:first-child td,
+.table-container table tr:first-child th {
+  background-color: #e9ecef !important;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #007bff;
+}
+
+/* Sticky columns for booking tables */
 td:nth-child(1),td:nth-child(2){font-weight:bold;position:sticky;z-index:5;border-right:2px solid #007bff;min-width:80px}
 td:nth-child(2){left:80px;min-width:120px}
 td:nth-child(1){left:0}
-tr:first-child td:nth-child(1),tr:first-child td:nth-child(2){z-index:15;background:#f8f9fa!important}
+tr:first-child td:nth-child(1),tr:first-child td:nth-child(2){z-index:15;background-color:#e9ecef!important}
+
+/* BOOKING TABLE COLORS - Harmonized soft colors */
 tr.booking-even{background-color:#ffffff}
-tr.booking-odd{background-color:#e8e8e8}
+tr.booking-odd{background-color:#f8f9fa}
 tr.booking-even td:nth-child(1),tr.booking-even td:nth-child(2){background-color:#ffffff!important}
-tr.booking-odd td:nth-child(1),tr.booking-odd td:nth-child(2){background-color:#e8e8e8!important}
-tr.starts-today-odd{background-color:#93c47d!important}
-tr.starts-today-even{background-color:#b6d7a8!important}
-tr.ends-today-odd{background-color:#6fa8dc!important}
-tr.ends-today-even{background-color:#9fc5e8!important}
-tr.kayak-trail-odd{background-color:#c27ba0!important}
-tr.kayak-trail-even{background-color:#d5a6bd!important}
-tr.starts-today-odd td:nth-child(1),tr.starts-today-odd td:nth-child(2){background-color:#93c47d!important}
-tr.starts-today-even td:nth-child(1),tr.starts-today-even td:nth-child(2){background-color:#b6d7a8!important}
-tr.ends-today-odd td:nth-child(1),tr.ends-today-odd td:nth-child(2){background-color:#6fa8dc!important}
-tr.ends-today-even td:nth-child(1),tr.ends-today-even td:nth-child(2){background-color:#9fc5e8!important}
-tr.kayak-trail-odd td:nth-child(1),tr.kayak-trail-odd td:nth-child(2){background-color:#c27ba0!important}
-tr.kayak-trail-even td:nth-child(1),tr.kayak-trail-even td:nth-child(2){background-color:#d5a6bd!important}
-.end-today-cell{background-color:#6fa8dc!important}
+tr.booking-odd td:nth-child(1),tr.booking-odd td:nth-child(2){background-color:#f8f9fa!important}
+
+/* Special booking colors - using soft harmonized colors */
+tr.starts-today-odd{background-color:#a8d5a8!important}
+tr.starts-today-even{background-color:#c8e6c8!important}
+tr.ends-today-odd{background-color:#87ceeb!important}
+tr.ends-today-even{background-color:#b3ddf2!important}
+tr.kayak-trail-odd{background-color:#d8b7d8!important}
+tr.kayak-trail-even{background-color:#e8d5e8!important}
+
+/* Sticky column colors for special bookings */
+tr.starts-today-odd td:nth-child(1),tr.starts-today-odd td:nth-child(2){background-color:#a8d5a8!important}
+tr.starts-today-even td:nth-child(1),tr.starts-today-even td:nth-child(2){background-color:#c8e6c8!important}
+tr.ends-today-odd td:nth-child(1),tr.ends-today-odd td:nth-child(2){background-color:#87ceeb!important}
+tr.ends-today-even td:nth-child(1),tr.ends-today-even td:nth-child(2){background-color:#b3ddf2!important}
+tr.kayak-trail-odd td:nth-child(1),tr.kayak-trail-odd td:nth-child(2){background-color:#d8b7d8!important}
+tr.kayak-trail-even td:nth-child(1),tr.kayak-trail-even td:nth-child(2){background-color:#e8d5e8!important}
+
+.end-today-cell{background-color:#87ceeb!important}
 .empty-cell{color:#ccc;font-style:italic}
+
+/* OVERVIEW TABLE STYLING */
 .overview-table{min-width:600px;max-width:800px;width:auto;margin:0 auto}
 .overview-table td{background-color:white;padding:4px 8px;border:1px solid #ddd}
 .overview-table td:nth-child(1){position:sticky;left:0;font-weight:bold;z-index:5;border-right:2px solid #007bff;min-width:180px;max-width:180px;text-align:left;vertical-align:middle}
-.overview-table tr:first-child td{position:sticky;top:0;z-index:10;background:#e9ecef!important;font-weight:bold;border-bottom:2px solid #007bff;padding:8px}
-.overview-table tr:first-child td:nth-child(1){z-index:15;background:#e9ecef!important}
+
+/* Overview table header row */
+.overview-table tr:first-child td{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background-color:#e9ecef!important;
+  font-weight:bold;
+  border-bottom:2px solid #007bff;
+  padding:8px;
+}
+.overview-table tr:first-child td:nth-child(1){z-index:15;background-color:#e9ecef!important}
+
 .overview-table td:nth-child(n+2){text-align:center;vertical-align:middle;position:static!important}
 .overview-divider{border-top:3px solid #007bff!important}
-.overview-groups-going-out{background-color:#6aa84f!important}
-.overview-going-out-items{background-color:#b6d7a8!important}
-.overview-groups-coming-in{background-color:#6fa8dc!important}
+
+/* Overview colors - using same soft harmonized colors as booking tables */
+.overview-groups-going-out{background-color:#a8d5a8!important}
+.overview-going-out-items{background-color:#c8e6c8!important}
+.overview-groups-coming-in{background-color:#87ceeb!important}
 .overview-table .overview-section-header{padding:6px 8px!important;font-weight:bold;background-color:#000000!important;color:white!important}
 .overview-table .overview-section-header-row td{background-color:#000000!important;color:white!important;font-weight:bold;padding:6px 8px!important}
+
+/* Overview highlight gradients */
 .overview-highlight-1{background-color:#fffefe!important}
 .overview-highlight-2{background-color:#fef7f7!important}
 .overview-highlight-3{background-color:#fee8e8!important}
@@ -64,6 +100,8 @@ tr.kayak-trail-even td:nth-child(1),tr.kayak-trail-even td:nth-child(2){backgrou
 .overview-highlight-8{background-color:#fa9393!important}
 .overview-highlight-9{background-color:#f98282!important}
 .overview-highlight-10{background-color:#f87171!important}
+
+/* MOBILE RESPONSIVE */
 @media (max-width:768px){
 body{padding:8px}
 .header{padding:10px}
@@ -75,12 +113,13 @@ td:nth-child(1){display:none}
 td:nth-child(2){white-space:normal!important;word-wrap:break-word;max-width:120px;position:sticky;left:0;font-weight:bold;z-index:5;border-right:2px solid #007bff}
 td:nth-child(17){min-width:250px;max-width:300px}
 tr:first-child td:nth-child(1){display:none}
-tr:first-child td:nth-child(2){position:sticky;left:0;z-index:15;background:#f8f9fa!important}
+tr:first-child td:nth-child(2){position:sticky;left:0;z-index:15;background-color:#e9ecef!important}
 .overview-table{min-width:500px;max-width:100%;width:auto}
 .overview-table td:nth-child(1){max-width:140px;min-width:140px;white-space:normal!important;word-wrap:break-word;position:sticky!important;left:0!important;display:table-cell!important;font-weight:bold;z-index:5;border-right:2px solid #007bff}
-.overview-table tr:first-child td{position:sticky!important;top:0!important;z-index:10!important;background:#e9ecef!important;font-weight:bold;padding:6px 4px!important}
-.overview-table tr:first-child td:nth-child(1){z-index:15!important;background:#e9ecef!important}
+.overview-table tr:first-child td{position:sticky!important;top:0!important;z-index:10!important;background-color:#e9ecef!important;font-weight:bold;padding:6px 4px!important}
+.overview-table tr:first-child td:nth-child(1){z-index:15!important;background-color:#e9ecef!important}
 }
+
 @media (max-width:480px){
 .header h2{font-size:16px}
 table{font-size:11px}
@@ -88,15 +127,17 @@ td{padding:3px 2px}
 .tab{padding:8px 12px;font-size:13px}
 td:nth-child(2){max-width:100px}
 }
+
 @media (max-width:768px) and (orientation:landscape){
 table{font-size:11px;min-width:800px}
 td{padding:3px 2px;white-space:nowrap}
 td:nth-child(1){display:table-cell!important;min-width:60px;position:sticky;left:0;font-weight:bold;z-index:5;border-right:2px solid #007bff}
 td:nth-child(2){left:60px;min-width:100px;max-width:none;white-space:nowrap!important;word-wrap:normal;position:sticky;font-weight:bold;z-index:5;border-right:2px solid #007bff}
-tr:first-child td:nth-child(1){display:table-cell!important;position:sticky;left:0;z-index:15;background:#f8f9fa!important}
-tr:first-child td:nth-child(2){position:sticky;left:60px;z-index:15;background:#f8f9fa!important}
+tr:first-child td:nth-child(1){display:table-cell!important;position:sticky;left:0;z-index:15;background-color:#e9ecef!important}
+tr:first-child td:nth-child(2){position:sticky;left:60px;z-index:15;background-color:#e9ecef!important}
 td:nth-child(17){white-space:normal}
 }
+
 .refresh-info{font-size:12px;color:#666;margin-top:5px}
 .auto-update-notice{background:#d4edda;color:#155724;padding:8px;border-radius:4px;margin:10px 0;font-size:13px;text-align:center;border:1px solid #c3e6cb}
     </style>
@@ -105,7 +146,7 @@ td:nth-child(17){white-space:normal}
     <div class="header">
         <h2>Guest list Thu 5 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Last updated: 2025-06-05 22:06:33</div>
+        <div class="refresh-info">Last updated: 2025-06-05 22:11:43</div>
         <div class="auto-update-notice">🔄 Updates automatically every 15 minutes</div>
     </div>
     
