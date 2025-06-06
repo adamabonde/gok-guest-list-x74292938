@@ -35,7 +35,7 @@ table tr:first-child th,
 table tr:first-child td:nth-child(1) {
   z-index: 30 !important;
 }
-.table-container table tr:first-child td:nth-child(2) {
+table tr:first-child td:nth-child(2) {
   z-index: 30 !important;
 }
 
@@ -97,6 +97,22 @@ tr.kayak-trail-even td:nth-child(1),tr.kayak-trail-even td:nth-child(2){backgrou
 .overview-table .overview-section-header{padding:6px 8px!important;font-weight:bold;background-color:#ffffff!important;color:#000000!important}
 .overview-table .overview-section-header-row td{background-color:#ffffff!important;color:#000000!important;font-weight:bold;padding:6px 8px!important;border-color:#ffffff!important}
 .overview-table .overview-section-header-row{border-top:20px solid #ffffff!important}
+
+/* Fix for overview table - override global column 2 rules */
+.overview-table td:nth-child(2) {
+    min-width: 80px !important;
+    max-width: 80px !important;
+    width: 80px !important;
+    position: static !important;
+    left: auto !important;
+    font-weight: normal !important;
+    border-right: 1px solid #ddd !important;
+}
+
+/* Fix z-index for overview table headers */
+.overview-table tr:first-child td:nth-child(2) {
+    z-index: 10 !important;
+}
 
 /* Overview highlight gradients */
 .overview-highlight-1{background-color:#fffefe!important}
@@ -160,7 +176,7 @@ td:nth-child(18){white-space:normal}
     <div class="header">
         <h2>Guest list Fri 6 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Updates every 15 minutes | Last updated: 10:36:52</div>
+        <div class="refresh-info">Updates every 15 minutes | Last updated: 10:41:30</div>
     </div>
     
     <div class="tabs">
