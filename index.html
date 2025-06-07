@@ -183,6 +183,29 @@ tr.kayak-trail-even td:nth-child(1),tr.kayak-trail-even td:nth-child(2){backgrou
 .wind-fresh{background-color:#EEEEE6!important} /* Slightly more gray - 8-10 m/s (fresh breeze) */
 .wind-strong{background-color:#EAEAE0!important} /* Subtle but noticeable gray - 10+ m/s (strong wind) */
 
+/* Ensure weather conditional formatting overrides any column-specific styling */
+.weather-table .rain-none,
+.weather-table .rain-light,
+.weather-table .rain-moderate,
+.weather-table .rain-heavy,
+.weather-table .rain-very-heavy,
+.weather-table .rain-extreme,
+.weather-table .temp-cool,
+.weather-table .temp-mild,
+.weather-table .temp-pleasant,
+.weather-table .temp-warm,
+.weather-table .temp-hot,
+.weather-table .temp-very-hot,
+.weather-table .wind-calm,
+.weather-table .wind-light,
+.weather-table .wind-gentle,
+.weather-table .wind-moderate,
+.weather-table .wind-fresh,
+.weather-table .wind-strong {
+  background-color: inherit !important;
+  font-weight: inherit !important;
+}
+
 /* Weather section headers */
 .weather-table .weather-section-header{padding:6px 8px!important;font-weight:bold;background-color:#B0E0E6!important;color:#000000!important} /* Powder Blue */
 .weather-table .weather-section-header-row td{background-color:#B0E0E6!important;color:#000000!important;font-weight:bold;padding:6px 8px!important;border-color:#B0E0E6!important}
@@ -239,7 +262,7 @@ td:nth-child(18){white-space:normal}
     <div class="header">
         <h2>Guest list Sat 7 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Updates every 15 minutes | Last updated: 11:07:09</div>
+        <div class="refresh-info">Updates every 15 minutes | Last updated: 11:10:54</div>
     </div>
     
     <div class="tabs">
