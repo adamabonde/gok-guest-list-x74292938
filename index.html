@@ -13,7 +13,7 @@ body{font-family:Arial,sans-serif;margin:0;padding:15px;background-color:#f5f5f5
 .tab:hover{background:#007bff;color:white}
 .tab-content{display:none}
 .tab-content.active{display:block}
-.table-container{background:white;border-radius:8px;overflow:auto;box-shadow:0 2px 4px rgba(0,0,0,0.1);max-height:85vh;position:relative;padding-bottom:60px}
+.table-container{background:white;border-radius:8px;overflow:auto;box-shadow:0 2px 4px rgba(0,0,0,0.1);max-height:75vh;position:relative}
 table{width:100%;border-collapse:collapse;font-size:14px;min-width:900px}
 td,th{border:1px solid #ddd;padding:8px 6px;text-align:left;white-space:nowrap;vertical-align:top}
 td:nth-child(18){white-space:normal;min-width:300px;max-width:400px}
@@ -122,14 +122,15 @@ tr.kayak-trail-even td:nth-child(1),tr.kayak-trail-even td:nth-child(2){backgrou
 
 /* Subtle demarcation between weather and resource rows */
 .weather-resource-divider {
-  background-color: #e9ecef !important;
-  border-top: 2px solid #e9ecef !important;
+  background-color: #ffffff !important;
+  border-top: 1px solid #ddd !important;
+  border-bottom: 1px solid #ddd !important;
 }
 .weather-resource-divider td {
-  background-color: #e9ecef !important;
-  border-color: #e9ecef !important;
-  height: 8px !important;
-  padding: 2px !important;
+  background-color: #ffffff !important;
+  border-color: #ddd !important;
+  height: 6px !important;
+  padding: 1px !important;
 }
 
 /* Overview highlight gradients */
@@ -274,7 +275,7 @@ table{font-size:12px;min-width:700px}
 td{padding:4px 3px}
 .tabs{margin-bottom:10px}
 .tab{padding:10px 16px;font-size:14px}
-.table-container{max-height:80vh!important;padding-bottom:80px!important} /* Restore height and add more bottom padding on mobile */
+.table-container{max-height:65vh!important} /* Simple height reduction for mobile */
 td:nth-child(1){display:none}
 td:nth-child(2){white-space:normal!important;word-wrap:break-word;max-width:120px;position:sticky;left:0;font-weight:bold;z-index:5;border-right:2px solid #007bff}
 td:nth-child(18){min-width:200px;max-width:250px}
@@ -318,7 +319,7 @@ td:nth-child(18){white-space:normal}
     <div class="header">
         <h2>Guest list Sat 7 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Updates every 15 minutes | Last updated: 14:06:09</div>
+        <div class="refresh-info">Updates every 15 minutes | Last updated: 14:12:30</div>
     </div>
     
     <div class="tabs">
