@@ -269,28 +269,28 @@ tr.kayak-trail-even td:nth-child(1),tr.kayak-trail-even td:nth-child(2){backgrou
 .coming-in-highlight-9{background-color:#cae4fa!important}
 .coming-in-highlight-10{background-color:#c4e1fa!important}
 
-/* Very specific overrides for green and blue gradients for Today column (2nd column) in resource rows */
-.weather-table .going-out-highlight-1 { background-color:#fafefb!important; }
-.weather-table .going-out-highlight-2 { background-color:#f4fdf6!important; }
-.weather-table .going-out-highlight-3 { background-color:#eefcf1!important; }
-.weather-table .going-out-highlight-4 { background-color:#e8fbed!important; }
-.weather-table .going-out-highlight-5 { background-color:#e2fae8!important; }
-.weather-table .going-out-highlight-6 { background-color:#dcf9e3!important; }
-.weather-table .going-out-highlight-7 { background-color:#d6f8de!important; }
-.weather-table .going-out-highlight-8 { background-color:#d0f7d9!important; }
-.weather-table .going-out-highlight-9 { background-color:#caf6d4!important; }
-.weather-table .going-out-highlight-10 { background-color:#c4f5cf!important; }
+/* Highest specificity for Today column (2nd column) - this should override everything */
+.weather-table td:nth-child(2).going-out-highlight-1 { background-color:#fafefb!important; }
+.weather-table td:nth-child(2).going-out-highlight-2 { background-color:#f4fdf6!important; }
+.weather-table td:nth-child(2).going-out-highlight-3 { background-color:#eefcf1!important; }
+.weather-table td:nth-child(2).going-out-highlight-4 { background-color:#e8fbed!important; }
+.weather-table td:nth-child(2).going-out-highlight-5 { background-color:#e2fae8!important; }
+.weather-table td:nth-child(2).going-out-highlight-6 { background-color:#dcf9e3!important; }
+.weather-table td:nth-child(2).going-out-highlight-7 { background-color:#d6f8de!important; }
+.weather-table td:nth-child(2).going-out-highlight-8 { background-color:#d0f7d9!important; }
+.weather-table td:nth-child(2).going-out-highlight-9 { background-color:#caf6d4!important; }
+.weather-table td:nth-child(2).going-out-highlight-10 { background-color:#c4f5cf!important; }
 
-.weather-table .coming-in-highlight-1 { background-color:#fafcfe!important; }
-.weather-table .coming-in-highlight-2 { background-color:#f4f9fe!important; }
-.weather-table .coming-in-highlight-3 { background-color:#eef6fd!important; }
-.weather-table .coming-in-highlight-4 { background-color:#e8f3fd!important; }
-.weather-table .coming-in-highlight-5 { background-color:#e2f0fc!important; }
-.weather-table .coming-in-highlight-6 { background-color:#dcedfc!important; }
-.weather-table .coming-in-highlight-7 { background-color:#d6eafb!important; }
-.weather-table .coming-in-highlight-8 { background-color:#d0e7fb!important; }
-.weather-table .coming-in-highlight-9 { background-color:#cae4fa!important; }
-.weather-table .coming-in-highlight-10 { background-color:#c4e1fa!important; }
+.weather-table td:nth-child(2).coming-in-highlight-1 { background-color:#fafcfe!important; }
+.weather-table td:nth-child(2).coming-in-highlight-2 { background-color:#f4f9fe!important; }
+.weather-table td:nth-child(2).coming-in-highlight-3 { background-color:#eef6fd!important; }
+.weather-table td:nth-child(2).coming-in-highlight-4 { background-color:#e8f3fd!important; }
+.weather-table td:nth-child(2).coming-in-highlight-5 { background-color:#e2f0fc!important; }
+.weather-table td:nth-child(2).coming-in-highlight-6 { background-color:#dcedfc!important; }
+.weather-table td:nth-child(2).coming-in-highlight-7 { background-color:#d6eafb!important; }
+.weather-table td:nth-child(2).coming-in-highlight-8 { background-color:#d0e7fb!important; }
+.weather-table td:nth-child(2).coming-in-highlight-9 { background-color:#cae4fa!important; }
+.weather-table td:nth-child(2).coming-in-highlight-10 { background-color:#c4e1fa!important; }
 
 /* Weather section headers */
 .weather-table .weather-section-header{padding:6px 8px!important;font-weight:bold;background-color:#B0E0E6!important;color:#000000!important} /* Powder Blue */
@@ -350,7 +350,7 @@ td:nth-child(18){white-space:normal}
     <div class="header">
         <h2>Guest list Sat 7 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Updates every 15 minutes | Last updated: 17:21:08</div>
+        <div class="refresh-info">Updates every 15 minutes | Last updated: 17:21:55</div>
     </div>
     
     <div class="tabs">
