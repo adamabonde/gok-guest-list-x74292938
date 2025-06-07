@@ -106,9 +106,19 @@ tr.kayak-trail-even td:nth-child(1),tr.kayak-trail-even td:nth-child(2){backgrou
 .overview-groups-going-out{background-color:#93c47d!important}
 .overview-going-out-items{background-color:#b6d7a8!important}
 .overview-groups-coming-in{background-color:#6fa8dc!important}
-.overview-table .overview-section-header{padding:6px 8px!important;font-weight:bold;background-color:#ffffff!important;color:#000000!important}
-.overview-table .overview-section-header-row td{background-color:#ffffff!important;color:#000000!important;font-weight:bold;padding:6px 8px!important;border-color:#ffffff!important}
+.overview-table .overview-section-header{padding:6px 8px!important;font-weight:bold;background-color:#e9ecef!important;color:#000000!important;border-color:#e9ecef!important}
+.overview-table .overview-section-header-row td{background-color:#e9ecef!important;color:#000000!important;font-weight:bold;padding:6px 8px!important;border-color:#e9ecef!important}
 .overview-table .overview-section-header-row{border-top:20px solid #ffffff!important}
+
+/* Higher specificity override for overview section headers */
+.overview-table tr.overview-section-header-row td {
+  background-color: #e9ecef !important;
+  border-color: #e9ecef !important;
+}
+.overview-table td.overview-section-header {
+  background-color: #e9ecef !important;
+  border-color: #e9ecef !important;
+}
 
 /* Overview highlight gradients */
 .overview-highlight-1{background-color:#fffefe!important}
@@ -295,7 +305,7 @@ td:nth-child(18){white-space:normal}
     <div class="header">
         <h2>Guest list Sat 7 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Updates every 15 minutes | Last updated: 12:10:38</div>
+        <div class="refresh-info">Updates every 15 minutes | Last updated: 12:13:18</div>
     </div>
     
     <div class="tabs">
