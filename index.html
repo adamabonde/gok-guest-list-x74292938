@@ -13,7 +13,7 @@ body{font-family:Arial,sans-serif;margin:0;padding:15px;background-color:#f5f5f5
 .tab:hover{background:#007bff;color:white}
 .tab-content{display:none}
 .tab-content.active{display:block}
-.table-container{background:white;border-radius:8px;overflow:auto;box-shadow:0 2px 4px rgba(0,0,0,0.1);max-height:78vh;position:relative}
+.table-container{background:white;border-radius:8px;overflow:auto;box-shadow:0 2px 4px rgba(0,0,0,0.1);max-height:82vh;position:relative}
 table{width:100%;border-collapse:collapse;font-size:14px;min-width:900px}
 td,th{border:1px solid #ddd;padding:8px 6px;text-align:left;white-space:nowrap;vertical-align:top}
 td:nth-child(18){white-space:normal;min-width:300px;max-width:400px}
@@ -299,7 +299,10 @@ td:nth-child(2){max-width:100px}
 @media (max-width:768px) and (orientation:landscape){
 table{font-size:11px;min-width:800px}
 td{padding:3px 2px;white-space:nowrap}
-.table-container{max-height:75vh!important} /* Reduce height to keep tabs visible */
+.table-container{max-height:70vh!important} /* Further reduce to keep tabs fully visible */
+body{padding:4px} /* Reduce body padding in landscape */
+.header{padding:5px} /* Reduce header padding */
+.tabs{margin-bottom:5px} /* Reduce tab margin */
 td:nth-child(1){display:table-cell!important;min-width:60px;position:sticky;left:0;font-weight:bold;z-index:5;border-right:2px solid #007bff}
 td:nth-child(2){left:60px;min-width:100px;max-width:none;white-space:nowrap!important;word-wrap:normal;position:sticky;font-weight:bold;z-index:5;border-right:2px solid #007bff}
 tr:first-child td:nth-child(1){display:table-cell!important;position:sticky;left:0;z-index:30!important;background-color:#e9ecef!important}
@@ -320,7 +323,7 @@ td:nth-child(18){white-space:normal}
     <div class="header">
         <h2>Guest list Sat 7 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Updates every 15 minutes | Last updated: 14:25:43</div>
+        <div class="refresh-info">Updates every 15 minutes | Last updated: 14:32:53</div>
     </div>
     
     <div class="tabs">
