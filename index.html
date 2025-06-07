@@ -150,6 +150,27 @@ tr.kayak-trail-even td:nth-child(1),tr.kayak-trail-even td:nth-child(2){backgrou
   border-bottom:2px solid #007bff;
   padding:8px;
 }
+
+/* CSS variable for dynamic header height */
+:root {
+  --header-height: 59px; /* Default fallback */
+}
+
+/* Make section headers sticky with dynamic positioning */
+.weather-table .weather-section-header-row {
+  position: sticky !important;
+  top: var(--header-height) !important;
+  z-index: 8 !important;
+  background-color: #e9ecef !important;
+}
+
+/* Ensure main header row stays on top */
+.weather-table tr:first-child {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 10 !important;
+}
+
 .weather-table tr:first-child td:nth-child(1){z-index:15;background-color:#e9ecef!important}
 
 .weather-table td:nth-child(n+2){
@@ -350,7 +371,7 @@ td:nth-child(18){white-space:normal}
     <div class="header">
         <h2>Guest list Sat 7 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Updates every 15 minutes | Last updated: 17:37:05</div>
+        <div class="refresh-info">Updates every 15 minutes | Last updated: 17:44:41</div>
     </div>
     
     <div class="tabs">
@@ -701,45 +722,64 @@ td:nth-child(18){white-space:normal}
     </div>
     
     <script>
-        function showTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-            document.getElementById(tabName + '-content').classList.add('active');
-            document.querySelectorAll('.tab').forEach(tab => {
-                if (tab.textContent.includes('Overview') && tabName === 'overview') tab.classList.add('active');
-                else if (tab.textContent.includes('Stavsnäs') && tabName === 'stavsnäs') tab.classList.add('active');
-                else if (tab.textContent.includes('Sollenkroka') && tabName === 'sollenkroka') tab.classList.add('active');
-            });
-            sessionStorage.setItem('activeTab', tabName);
-        }
-        
-        function toggleComment(commentId) {
-            const shortElement = document.getElementById(commentId + '-short');
-            const fullElement = document.getElementById(commentId + '-full');
-            
-            if (shortElement && fullElement) {
-                if (shortElement.style.display === 'none') {
-                    shortElement.style.display = '';
-                    fullElement.style.display = 'none';
-                } else {
-                    shortElement.style.display = 'none';
-                    fullElement.style.display = '';
-                }
-            }
-        }
-        
-        setTimeout(() => location.reload(), 16 * 60 * 1000);
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.table-container').forEach(container => {
-                if (container) container.style.webkitOverflowScrolling = 'touch';
-            });
-            const activeTab = sessionStorage.getItem('activeTab');
-            if (activeTab) {
-                showTab(activeTab);
-            } else {
-                showTab('stavsnäs'); // Default to stavsnäs if no tab remembered
-            }
+    function showTab(tabName) {
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+        document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+        document.getElementById(tabName + '-content').classList.add('active');
+        document.querySelectorAll('.tab').forEach(tab => {
+            if (tab.textContent.includes('Overview') && tabName === 'overview') tab.classList.add('active');
+            else if (tab.textContent.includes('Stavsnäs') && tabName === 'stavsnäs') tab.classList.add('active');
+            else if (tab.textContent.includes('Sollenkroka') && tabName === 'sollenkroka') tab.classList.add('active');
         });
-    </script>
+        sessionStorage.setItem('activeTab', tabName);
+        
+        // Update header height after tab switch
+        setTimeout(updateHeaderHeight, 50);
+    }
+    
+    function toggleComment(commentId) {
+        const shortElement = document.getElementById(commentId + '-short');
+        const fullElement = document.getElementById(commentId + '-full');
+        
+        if (shortElement && fullElement) {
+            if (shortElement.style.display === 'none') {
+                shortElement.style.display = '';
+                fullElement.style.display = 'none';
+            } else {
+                shortElement.style.display = 'none';
+                fullElement.style.display = '';
+            }
+        }
+    }
+    
+    // Function to update header height for sticky positioning
+    function updateHeaderHeight() {
+        const headerRow = document.querySelector('.weather-table tr:first-child');
+        if (headerRow) {
+            const height = headerRow.offsetHeight;
+            document.documentElement.style.setProperty('--header-height', height + 'px');
+        }
+    }
+    
+    setTimeout(() => location.reload(), 16 * 60 * 1000);
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.table-container').forEach(container => {
+            if (container) container.style.webkitOverflowScrolling = 'touch';
+        });
+        const activeTab = sessionStorage.getItem('activeTab');
+        if (activeTab) {
+            showTab(activeTab);
+        } else {
+            showTab('stavsnäs'); // Default to stavsnäs if no tab remembered
+        }
+        
+        // Initialize header height
+        updateHeaderHeight();
+    });
+    
+    // Update header height on window resize
+    window.addEventListener('resize', updateHeaderHeight);
+</script>
 </body>
 </html>
