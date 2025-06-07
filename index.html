@@ -169,10 +169,18 @@ tr.kayak-trail-even td:nth-child(1),tr.kayak-trail-even td:nth-child(2){backgrou
 .weather-label-rain { background-color: #F4F8FF !important; } /* Light blue to match rain gradient */
 .weather-label-neutral { background-color: #FFFFFF !important; } /* White for other rows */
 
-/* Weather section headers */
+/* Weather section headers - light grey */
 .weather-table .weather-section-header{padding:6px 8px!important;font-weight:bold;background-color:#F0F0F0!important;color:#000000!important} /* Light grey */
 .weather-table .weather-section-header-row td{background-color:#F0F0F0!important;color:#000000!important;font-weight:bold;padding:6px 8px!important;border-color:#F0F0F0!important}
 .weather-table .weather-section-header-row{border-top:20px solid #ffffff!important}
+
+/* Higher specificity override for section headers */
+.weather-table tr.weather-section-header-row td {
+  background-color: #F0F0F0 !important;
+}
+.weather-table td.weather-section-header {
+  background-color: #F0F0F0 !important;
+}
 
 /* Weather divider */
 .weather-divider{border-top:3px solid #007bff!important}
@@ -285,7 +293,7 @@ td:nth-child(18){white-space:normal}
     <div class="header">
         <h2>Guest list Sat 7 June</h2>
         <div style="font-size: 16px; margin: 5px 0; color: #000;">Contact: Alma, 076-026 21 77</div>
-        <div class="refresh-info">Updates every 15 minutes | Last updated: 11:58:35</div>
+        <div class="refresh-info">Updates every 15 minutes | Last updated: 12:04:09</div>
     </div>
     
     <div class="tabs">
